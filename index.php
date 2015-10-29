@@ -62,6 +62,16 @@
     <input type="text" name="title" value="">
     <br>
     <input type="submit" value="Submit">
-  </form> 
+  </form>
+  
+  <h1>Our amazing library patrons are:</h1>
+  <?php
+  // And now perform simple query – make sure it's working
+  $query = "SELECT * FROM book;";
+  $result = mysqli_query($connection, $query);
+
+
+
+  ?>
 </body>
 </html>
