@@ -67,10 +67,36 @@
   <h1>Our amazing library patrons are:</h1>
   <?php
   // And now perform simple query – make sure it's working
-  $query = "SELECT * FROM book;";
+  $query = "SELECT * FROM patron;";
   $result = mysqli_query($connection, $query);
 
-
+  // Iterate over the result set for books
+  echo "<table>";
+  echo "<tr>";
+  echo "<th>";
+  echo "ID";
+  echo "</th>";
+  echo "<th>";
+  echo "Firstname";
+  echo "</th>";
+  echo "<th>";
+  echo "Lastname";
+  echo "</th>";
+  echo "</tr>";
+  while ($row = mysqli_fetch_assoc($result)) {
+      echo "<tr>";
+      echo "<td>";
+      echo $row['id'];
+      echo "</td>";
+      echo "<td>";
+      echo $row['firstname'];
+      echo "</td>";
+      echo "<td>";
+      echo $row['lastname'];
+      echo "</td>";
+      echo "</tr>";
+  }
+  echo "</table>";
 
   ?>
 </body>
